@@ -1,5 +1,5 @@
-
 import unittest
+from xmlrunner import XMLTestRunner
 
 
 def add_numbers(a, b):
@@ -36,4 +36,5 @@ class TestAddFunction(unittest.TestCase):
         self.assertAlmostEqual(add_numbers(2.5, 3.1), 5.6)
 
 if __name__ == "__main__":
-    unittest.main()
+    with open('test-results.xml', 'wb') as output:
+        unittest.main(testRunner=XMLTestRunner(output=output), verbosity=2)
