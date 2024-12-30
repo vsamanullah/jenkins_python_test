@@ -9,7 +9,7 @@ ${base_url}         https://reqres.in
 
 *** Test Cases ***
 Validate_get_user_details
-    RequestsLibrary.Create Session    reres_session    ${base_url}
+    RequestsLibrary.Create Session    reres_session    ${base_url}		verify=False
     ${header_val}=   Create Dictionary      Content-Type=application/json
     ${get_response}=     RequestsLibrary.GET On Session         reres_session           /api/users/2        headers=${header_val}
     RequestsLibrary.Status Should Be    200
@@ -32,7 +32,7 @@ Validate_get_user_details
 
 
 Validate_create_user
-    RequestsLibrary.Create Session    reqes_create_session    ${base_url}
+    RequestsLibrary.Create Session    reqes_create_session    ${base_url}		verify=False
     ${header_val}=   Create Dictionary      Content-Type=application/json
 
     #--------------  Read json body -----------------------------
@@ -60,7 +60,7 @@ Validate_create_user
 
 
 Validate_update_user
-    RequestsLibrary.Create Session    reqes_create_session    ${base_url}
+    RequestsLibrary.Create Session    reqes_create_session    ${base_url}		verify=False
     ${header_val}=   Create Dictionary      Content-Type=application/json
 
     #--------------  Read json body -----------------------------
@@ -87,7 +87,7 @@ Validate_update_user
 
 
 Validate_update_user_partially
-    RequestsLibrary.Create Session    reqes_create_session    ${base_url}
+    RequestsLibrary.Create Session    reqes_create_session    ${base_url}		verify=False
     ${header_val}=   Create Dictionary      Content-Type=application/json
 
     #--------------  Read json body -----------------------------
@@ -114,7 +114,7 @@ Validate_update_user_partially
 
     
 Validate_delete_user
-    RequestsLibrary.Create Session    delete_session    ${base_url}
+    RequestsLibrary.Create Session    delete_session    ${base_url}		verify=False
     ${header_val}=   Create Dictionary      Content-Type=application/json
     ${response_object}=     RequestsLibrary.DELETE On Session         delete_session           /api/users/2        headers=${header_val}
     RequestsLibrary.Status Should Be    204
@@ -125,7 +125,7 @@ Validate_delete_user
 
 
 Validate_heard_operation
-    RequestsLibrary.Create Session    head_session    ${base_url}
+    RequestsLibrary.Create Session    head_session    ${base_url}		verify=False
     ${header_val}=   Create Dictionary      Content-Type=application/json
     ${response_object}=     RequestsLibrary.HEAD On Session        head_session           /api/users/2        headers=${header_val}
     RequestsLibrary.Status Should Be    200
@@ -135,7 +135,7 @@ Validate_heard_operation
     Log    ${response_object.headers}
 
 Validate_Basic_Auth
-    RequestsLibrary.Create Session    get_session    https://postman-echo.com
+    RequestsLibrary.Create Session    get_session    https://postman-echo.com		verify=False
 
     ${username}=    Set Variable    postman
     ${password}=    Set Variable    password
