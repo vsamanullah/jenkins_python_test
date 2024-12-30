@@ -12,10 +12,14 @@ Suite Teardown      perfrom_teardown_operation
 perfrom_setup_operation
     Log    perfroming suite setup
     IF    '${testing_type}' == 'web'
-        SeleniumLibrary.Open Browser      ${application_url}            ${browser_type}
-        SeleniumLibrary.Maximize Browser Window
-        SeleniumLibrary.Set Selenium Implicit Wait    10S
-        SeleniumLibrary.Set Selenium Timeout    10S
+		IF    '${headless}' == 'yes'
+			SeleniumLibrary.Open Browser      ${application_url}            ${browser_type}		options=add_argument("--headless=new")
+		ELSE		
+			SeleniumLibrary.Open Browser      ${application_url}            ${browser_type}
+		END
+		SeleniumLibrary.Maximize Browser Window
+		SeleniumLibrary.Set Selenium Implicit Wait    10S
+		SeleniumLibrary.Set Selenium Timeout    10S
     END
     IF    '${testing_type}' == 'api'
         Log    perfroming suite setup for api testing
