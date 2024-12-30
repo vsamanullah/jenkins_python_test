@@ -1,0 +1,5 @@
+*** Test Cases ***;${tst_username};${tst_password};[Tags];[Documentation]
+Valid User;Test Troop;Testing 123;;This test is to test valid credencials
+Invalid username;Invalid;Testing 123-123;;This test is to test Invalid password
+Invalid password;Test Troop;Invalid;;This test is to test Invalid username
+;;Testing 123;;This test is to test empty username
