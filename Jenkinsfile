@@ -18,7 +18,7 @@ pipeline {
     }
     post {
         success {
-            robot(outputPath: ${outputPath},
+            robot(outputPath: "${outputPath}",
                 passThreshold: 90.0,
                 unstableThreshold: 70.0,
                 disableArchiveOutput: true,
