@@ -16,11 +16,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        success {
-            // Publish JUnit test results from Newman only when pass
-            junit "${JUNIT_REPORT}"
-        }
-    }
 }
