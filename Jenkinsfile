@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define the location of the Git repository and credentials
         POSTMAN_COLLECTION = 'UserManagementAPITestForCI.postman_collection.json'   
-        JUNIT_REPORT = "./*.xml"
+        JUNIT_REPORT = "TestResults/*.xml"
     }
 
     stages {
